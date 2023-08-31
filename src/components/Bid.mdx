@@ -1,0 +1,57 @@
+---
+---
+
+import { suitReplace } from "@md/ChangeSuits.mjs";
+
+<table class="bids">
+  <thead>
+    <tr>
+      <th>W</th>
+      <th>N</th>
+      <th>S</th>
+      <th>E</th>
+    </tr>
+  </thead>
+  <tbody>
+    {(function () {
+      const bids = props.bids ?? undefined;
+      if (!bids) return;
+
+      const chunks = function(array, size) {
+        let result = [];
+
+        for (let i = 0; i < array.length; i += size) {
+          result.push(array.slice(i, i + size));
+        }
+
+        const lastElement = result[result.length - 1];
+        if (lastElement.length > 0 && lastElement.length < size) {
+          result[result.length - 1] = lastElement.concat(new Array(size).fill(''));
+        }
+
+        return result;
+      }
+
+      const bidding = chunks(
+        bids.split(' ').filter((bid) => bid != '')
+          .map((el) => el == '.' ? '' : suitReplace(el)),
+        4
+      );
+
+      return (
+        <>
+          {bidding.map((line) => (
+            <tr>
+            {line.map((bid) => (
+              <td style="text-align:center;" set:html={(bid)}></td>
+              ))}
+            </tr>
+          ))}
+        </>
+      );
+
+    })()}
+
+  </tbody>
+
+</table>

@@ -1,0 +1,26 @@
+---
+import "@styles/global.css";
+---
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<meta name="viewport" content="width=device-width" />
+	<meta name="generator" content={Astro.generator} />
+	<title>Κάστρο</title>
+</head>
+<body class="overflow-hidden">
+	<div class="min-h-[50vh] bg:gray-300">
+		<div class="pt-16 mx-auto prose prose-slate dark:prose-invert">
+			<slot />
+		</div>
+	</div>
+	<div class="dark">
+		<div class="min-h-[50vh] bg-slate-900">
+			<div class="pt-16 mx-auto prose prose-slate dark:prose-invert">
+				<slot />
+			</div>
+		</div>
+	</div>
+</body>
+</html>
