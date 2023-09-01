@@ -104,6 +104,15 @@ table.bids td {
 }
 
 /* Single hand */
-.hand {
-  @apply text-center;
+div.hand {
+  @apply flex flex-col mx-auto w-fit;
+}
+div.hand span.suit {
+  @apply inline-block mr-1 font-mono w-3;
+}
+span.hand span.suit {
+  @apply mr-1;
+}
+span.hand span.suit:not(:first-child) {
+  @apply ml-1;
 }
