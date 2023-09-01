@@ -1,5 +1,12 @@
 import { visit } from "unist-util-visit";
 
+export const symbols = {
+  S: '<span class="suit spade">S</span>',
+  H: '<span class="suit heart">H</span>',
+  D: '<span class="suit diamond">D</span>',
+  C: '<span class="suit club">C</span>',
+};
+
 export function changeSuits() {
   function transformer(tree) {
     visit(tree, "text", function (node) {
@@ -14,13 +21,6 @@ export function changeSuits() {
 }
 
 export function suitReplace(input) {
-  const symbols = {
-    S: '<span class="spade suit">S</span>',
-    H: '<span class="heart suit">H</span>',
-    D: '<span class="diamond suit">D</span>',
-    C: '<span class="club suit">C</span>',
-  };
-
   const suits = ["S", "H", "D", "C"];
   const convertBid = (match, p1, p2, p3, p4) => p1 + p2 + symbols[p3] + p4;
   const convertCard = (match, p1, p2, p3, p4) => p1 + symbols[p2] + p3 + p4;
