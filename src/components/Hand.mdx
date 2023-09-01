@@ -1,0 +1,31 @@
+---
+---
+
+import { symbols } from "@md/ChangeSuits.mjs";
+
+{(function () {
+const hand = props.children;
+if (!hand) return;
+
+      const chunks = hand.split(' ');
+      if (chunks.length != 4) return;
+
+      if (props.inline) {
+        return (
+          <>
+            <span class="hand inline">
+            <span class="suit spade">S</span>{chunks[0]} <span class="suit heart">H</span>{chunks[1]} <span class="suit diamond">D</span>{chunks[2]} <span class="suit club">C</span>{chunks[3]}
+            </span>
+          </>
+        );
+      }
+
+      return (
+        <>
+          <div class="hand">
+          <span class="suit spade">S</span>{chunks[0]} <span class="suit heart">H</span>{chunks[1]} <span class="suit diamond">D</span>{chunks[2]} <span class="suit club">C</span>{chunks[3]}
+          </div>
+        </>
+      );
+
+    })()}

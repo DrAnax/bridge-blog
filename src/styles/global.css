@@ -102,3 +102,8 @@ table.bids td {
 table.bids td {
   @apply text-xl;
 }
+
+/* Single hand */
+.hand {
+  @apply text-center;
+}
