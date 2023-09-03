@@ -1,15 +1,19 @@
 ---
 ---
 
+{/* Produces a bidding table */}
+{/* usage: <Bid bids="[bids]" /> */}
+{/* A single dot can be used for empty bid */}
+
 import { suitReplace } from "@helpers/ChangeSuits.mjs";
 
 <table class="bids">
   <thead>
     <tr>
-      <th>W</th>
-      <th>N</th>
-      <th>S</th>
-      <th>E</th>
+      <th>Δ<span class="hidden md:inline">ύση</span></th>
+      <th>Β<span class="hidden md:inline">ορράς</span></th>
+      <th>Α<span class="hidden md:inline">νατολή</span></th>
+      <th>Ν<span class="hidden md:inline">ότος</span></th>
     </tr>
   </thead>
   <tbody>
