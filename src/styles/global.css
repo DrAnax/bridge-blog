@@ -99,9 +99,6 @@ table.bids th,
 table.bids td {
   @apply text-center px-4;
 }
-table.bids td {
-  @apply text-xl;
-}
 
 /* Single hand */
 div.hand {

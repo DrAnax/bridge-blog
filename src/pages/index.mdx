@@ -2,10 +2,15 @@
 layout: "@layouts/DefaultLayout.astro"
 ---
 
+import Bid from "@components/Bid.mdx";
 import Hand from "@components/Hand.mdx";
 
 Τις προάλλες σήκωσα το παρακάτω χέρι: <Hand inline>KQ4 - AJ7 43</Hand> και περίμενα τους άλλους να αγοράσουν. Ο συμπαίκτης μου κρατούσε:
 
 <Hand>KQ4 . AJ7 43</Hand>
 
-και πέρασε σε πρώτη θέση πάσο
+και πέρασε σε πρώτη θέση πάσο.
+
+Η αγορά πήγε
+
+<Bid bids=". 1H p 1NT p 2C p p p" />
